@@ -20,5 +20,5 @@ def call(Map params = [:]){
 
 def default_step(msg) {
   sh 'echo "Default"'
-  sh "echo '${msg}'"
+  sh "echo /"${msg}/""
 }
