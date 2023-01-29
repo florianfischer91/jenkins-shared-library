@@ -1,5 +1,5 @@
-def call(Map parameters = [:]){
-  my_step = parameters.my_step?: default_step
+def call(Map params = [:]){
+  my_step = params.my_step?: default_step
   pipeline {
     agent any
     parameters {
