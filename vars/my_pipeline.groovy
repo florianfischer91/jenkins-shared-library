@@ -11,7 +11,8 @@ def call(Map pparams = [:]){
     stages{
       stage("Stage1"){
         steps {
-          my_step("Hello from shared library")
+          sh 'docker version'
+          sh 'docker "${my_step("Hello from shared library")}"'
           //default_step(params.PERSON)
           default_step("Default Value")
         }
