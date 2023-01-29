@@ -1,5 +1,13 @@
 def call(Closure body){
-  echo "This is my stage in a groovy file"
+  def config = [:]
+  body.resolveStrategy = Closure.DELEGATE_FIRST
+  body.delegate = config
   body()
-  echo "After stage
+  stage('My Stage'){
+    steps{
+      sh 'echo "Test 123"'
+      body()
+      sh 'echo "After"'
+    }
+  }
 }
