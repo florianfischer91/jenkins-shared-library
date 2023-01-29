@@ -2,7 +2,7 @@ def call(Map pparams = [:]){
   my_step = pparams.my_step?: default_step
   pipeline {
     agent any
-    pparams.custom_params()
+    //pparams.custom_params()
     /*parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
