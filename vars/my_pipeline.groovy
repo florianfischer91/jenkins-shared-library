@@ -12,7 +12,8 @@ def call(Map pparams = [:]){
       stage("Stage1"){
         steps {
           my_step("Hello from shared library")
-          default_step(params.PERSON)
+          //default_step(params.PERSON)
+          default_step("Default Value")
         }
       }
     }
