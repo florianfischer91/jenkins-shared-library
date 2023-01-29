@@ -5,7 +5,7 @@ def call(body) {
     body.delegate = config
     body()
 
-    container(name: 'test') {
+    //container(name: 'test') {
         for (int i = 0; i < config.messages.size(); i++) {
             //image = config.images[i]
             //retry(3) {
@@ -15,5 +15,5 @@ def call(body) {
             //}
             sh "Sending a message: ${config.messages[i]}"
         }
-    }
+    //}
 }
