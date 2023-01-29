@@ -13,7 +13,7 @@ def call(body) {
             //    sh "docker tag  ${env.FABRIC8_DOCKER_REGISTRY_SERVICE_HOST}:${env.FABRIC8_DOCKER_REGISTRY_SERVICE_PORT}/fabric8/${image}:${config.tag} docker.io/fabric8/${image}:${config.tag}"
             //    sh "docker push docker.io/fabric8/${image}:${config.tag}"
             //}
-            sh "Sending a message: ${config.messages[i]}"
+            sh 'echo "Sending a message: ${config.messages[i]}"'
         }
     //}
 }
