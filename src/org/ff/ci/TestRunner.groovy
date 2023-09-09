@@ -1,5 +1,9 @@
 package org.ff.ci
 
+import jenkins.model.Jenkins
+import hudson.plugins.git.GitSCM
+import hudson.plugins.git.UserRemoteConfig
+import hudson.plugins.git.BranchSpec
 
 class TestRunner {
 
@@ -20,6 +24,12 @@ class TestRunner {
         // cancelPreviousCommits()
         // testLevelConfig.init() // This will read the tags from the PR if this is a PR
         script.echo("Branch: ${script.env.BRANCH_NAME}")
+        String causeClass = this.script.currentBuild.rawBuild.getCauses()[0].getClass().getName()
+        script.echo("Cause: ${causeClass}")
+        script.stage("Dynamically added") {
+            script.sh(script: "docker --version")
+            script.sh(script: "python3 --version")
+        }
         // if(script.env.JOB_NAME == "ConanNightly" || script.env.BRANCH_NAME =~ /(^release.*)|(^master)/) {
         //     runReleaseTests()
         // }
